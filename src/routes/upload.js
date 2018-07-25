@@ -1,9 +1,9 @@
 const Router = require('koa-router')
 const Upload = require('../controllers/upload')
-
 const busboy = require('koa-busboy')
+
 const uploader = busboy({
-  dest: 'upload', // default is system temp folder (`os.tmpdir()`)
+  dest: 'xlt/upload', // default is system temp folder (`os.tmpdir()`)
   fnDestFilename: (fieldname, filename) => Date.now().toString(16) + filename
 })
 

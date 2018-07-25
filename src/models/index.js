@@ -3,14 +3,16 @@ const { mongoUri,mongoUriParam} = require('../../config')
 
 mongoose.Promise = global.Promise
 
-const conn = mongoose.createConnection(`${mongoUri}/koa?${mongoUriParam}`)
+const conn = mongoose.createConnection(`${mongoUri}/xlt?${mongoUriParam}`)
 
 const db = {}
 
 const log = require('./log')
+const article = require('./article')
 
 const models = [
 	log,
+	article,
 ]
 
 for (model of models) {

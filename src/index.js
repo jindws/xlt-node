@@ -40,8 +40,8 @@ app.use(SessStoreUser)
 LogFileArrange()
 
 // 系统级别的log记录，不是服务器的记录，记在log表中
-const {Record} = require('./helpers/log')
-app.use(Record)
+// const {Record} = require('./helpers/log')
+// app.use(Record)
 
 // 使用router
 app.use(router.routes(),router.allowedMethods())

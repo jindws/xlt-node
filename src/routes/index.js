@@ -1,16 +1,18 @@
 const Router = require("koa-router");
 
 const view = require("./view");
-const aliyun = require("./aliyun");
 const upload = require("./upload")
+const article = require("./article")
+
 
 const router = Router({
-	// prefix:''
+	prefix:'/xlt'
 });
 
 const routes = [
 	view,
 	upload,
+	article,
 ];
 
 for (route of routes) {
