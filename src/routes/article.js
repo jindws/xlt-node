@@ -10,5 +10,11 @@ const router = Router({
  */
 router.post('/list', Article.list)
 
+/*
+ * @post '/api/article/create'
+ */
+router.post('/create', Article.create)
+
+
 
 module.exports = router

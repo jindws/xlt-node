@@ -77,24 +77,14 @@ exports.getAcessRealIP = (req) => {
 }
 
 exports.SessStoreUser = async(ctx, next) => {
-    // const env = process.env.NODE_ENV || 'development'
-    // let isLogin = false
-    //
-    // if(env === 'development') {
-    //     var { sign_id = '5b28d14eb04394d85288a498' } = ctx.session
-    // } else {
-    //     var { sign_id = ''} = ctx.session
-    // }
-    //
-    // if(sign_id) {
-    //     sign = await models_homework.sign.findById(sign_id)
-    //     isLogin = true
-    // }
-    //
-    // ctx.state = {
-    //     sign,
-    //     isLogin,
-    // }
+    const {body} = ctx.request
+    const {session_key} = body
+
+    const user = await models.user.findOne({
+        session_key,
+    })
+
+    ctx.state.user = user
 
     await next()
 }

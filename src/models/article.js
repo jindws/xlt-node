@@ -2,6 +2,8 @@ const model = {
     name: 'article', // 指定数据库中的collection
     schema: {
         user_id:String,
+        user_name:String,
+        headimage:String,
         title:String,
         content:String,
         images:[],

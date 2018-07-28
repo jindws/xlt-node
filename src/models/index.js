@@ -9,10 +9,12 @@ const db = {}
 
 const log = require('./log')
 const article = require('./article')
+const user = require('./user')
 
 const models = [
 	log,
 	article,
+	user,
 ]
 
 for (model of models) {
