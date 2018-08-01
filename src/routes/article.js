@@ -11,9 +11,14 @@ const router = Router({
 router.post('/list', Article.list)
 
 /*
- * @post '/api/article/create'
+ * @post '/api/article/operate'
  */
-router.post('/create', Article.create)
+router.post('/operate', Article.operate)
+
+/*
+ * @post '/api/article/main'
+ */
+router.post('/main', Article.main)
 
 
 

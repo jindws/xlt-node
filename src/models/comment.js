@@ -1,14 +1,11 @@
 const model = {
-    name: 'article', // 指定数据库中的collection
+    name: 'comment', // 指定数据库中的collection
     schema: {
         user_id:String,
         user_name:String,
         headimage:String,
-        title:String,
-        content:String,
-        images:[],
-        voices:[],
-        videos:[],
+        comment:String,
+        article_id:String,
         create_time:{
             type:Number,
             default:Date.now,

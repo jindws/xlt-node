@@ -78,13 +78,14 @@ exports.getAcessRealIP = (req) => {
 
 exports.SessStoreUser = async(ctx, next) => {
     const {body} = ctx.request
-    const {session_key} = body
+    const {session_id:_id} = body
 
-    const user = await models.user.findOne({
-        session_key,
-    })
-
-    ctx.state.user = user
+    if(_id){
+        const user = await models.user.findOne({
+            _id
+        })
+        ctx.state.user = user
+    }
 
     await next()
 }
